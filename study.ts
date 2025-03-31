@@ -121,3 +121,43 @@ function logMessageWithReturn(message: any): any {
 }
 logMessageWithReturn("Hello, World!")
 logMessageWithReturn(42)
+
+
+//Tuples
+let personTuple: [string, number] = ["John", 30]
+personTuple[0] = "Jane"
+personTuple[1] = 31
+//personTuple[2] = true // Error: Tuple type '[string, number]' of length '2' has no element at index '2'.
+
+//Tuples Real World Example (HSLA color) & Coords
+let hsla: [number, string, string, number];
+hsla = [200, '100%', '50%', 1];
+
+let xy: [number, number];
+xy = [94.7, 20.1];
+
+function useCoords(): [number, number] {
+  // get coords
+  const lat = 100;
+  const long = 50;
+  return [lat, long];
+}
+
+const [lat, long] = useCoords();
+
+
+//Named tuples
+let Point: [x: number, y: number]
+Point = [10, 20]
+Point[0] = 30
+Point[1] = 40
+let Point2D: [x: number, y: number]
+Point2D = [50, 60]
+Point2D[0] = 70
+Point2D[1] = 80
+
+let Point3D: [x: number, y: number]
+Point3D = [90, 100]
+Point3D[0] = 110
+Point3D[1] = 120
+

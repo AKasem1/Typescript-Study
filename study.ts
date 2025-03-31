@@ -200,3 +200,37 @@ createPost(newPost)
 //Interfaces with arrays
 let posts: Post[] = []
 posts.push(newPost)
+
+
+//Type Aliases
+
+//example 1 of type alias: tuples
+type RGB = [number, number, number]
+
+function getRandomColor(): RGB {
+    const r = Math.floor(Math.random() * 256)
+    const g = Math.floor(Math.random() * 256)
+    const b = Math.floor(Math.random() * 256)
+    return [r, g, b]
+}
+const color: RGB = getRandomColor()
+
+//example 2 of type alias: objects
+type User = {
+    id: number,
+    name: string,
+    email: string
+}
+
+const user: User = {
+    id: 1,
+    name: "Jane Doe",
+    email: "abdo@gmail.com"
+}
+
+function formatUser(user: User): void {
+    console.log(`User: ${user.name}, Email: ${user.email}`)
+}
+
+formatUser(user)
+formatUser({ id: 2, name: "John Smith", email: "abdooo@gmail.com" })

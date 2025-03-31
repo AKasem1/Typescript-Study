@@ -78,6 +78,36 @@ The `any` type allows a variable to hold any type of value, and its type can cha
 
 > **Tip**: Use `any` sparingly and prefer stricter types whenever possible to fully leverage the benefits of **TypeScript**.
 
+### Interfaces
 
-Interfaces
-    interfaces are a way to define a certain structure that all data structures can adhere to, whether they are classes, objects or even other interfaces.
+Interfaces are a way to define a specific structure that data must adhere to. They can be used with classes, objects, or even other interfaces. Interfaces help enforce consistency and provide better type checking in **TypeScript**.
+
+#### Example:
+```typescript
+interface Person {
+    name: string;
+    age: number;
+    greet(): void;
+}
+
+const user: Person = {
+    name: "John",
+    age: 30,
+    greet() {
+        console.log("Hello!");
+    },
+};
+```
+
+### Union Types
+
+Union types allow a variable to hold one of several specified types. This is useful when a value can belong to multiple types, providing flexibility while maintaining type safety.
+
+#### Example:
+```typescript
+let value: string | number;
+
+value = "Hello"; // Valid
+value = 42;      // Valid
+// value = true; // Error: Type 'boolean' is not assignable to type 'string | number'.
+```

@@ -234,3 +234,18 @@ function formatUser(user: User): void {
 
 formatUser(user)
 formatUser({ id: 2, name: "John Smith", email: "abdooo@gmail.com" })
+
+
+//Union Types
+let someId: string | number
+someId = 123
+someId = "abc123"
+
+let email: string | null //We face this case in the login form when the user is not logged in
+email = null // User is not logged in
+email = "abdooo@gmail.com" // User is logged in
+
+type Id = string | number
+let userId: Id
+userId = 123
+userId = "abc123"

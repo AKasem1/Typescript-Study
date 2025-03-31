@@ -82,3 +82,42 @@ function addAllNumbers(numbers: number[]) {
 function multiply(a: number, b: number) {
     return a * b
 }
+
+
+//Any type
+let anything: any
+let title
+anything = 42
+anything = "Hello"
+title = "TypeScript Basics"
+title = 123
+
+//Any type with arrays
+let mixedArray: any[] = [1, "two", true]
+mixedArray.push({ name: "John" })
+
+//Any type with objects
+let mixedObject: { [key: string]: any } = {
+    name: "John",
+    age: 30,
+    isStudent: false,
+}
+mixedObject.name = "Jane"
+mixedObject.age = 31
+mixedObject.isStudent = true
+mixedObject.address = "123 Main St" // Adding a new property dynamically
+
+//Any type with functions
+function logMessage(message: any) {
+    console.log(message)
+}
+logMessage("Hello, World!")
+logMessage(42)
+logMessage({ name: "John", age: 30 })
+
+function logMessageWithReturn(message: any): any {
+    console.log(message)
+    return message
+}
+logMessageWithReturn("Hello, World!")
+logMessageWithReturn(42)

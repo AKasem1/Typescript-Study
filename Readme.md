@@ -9,6 +9,8 @@ I am currently studying **TypeScript** from the following resource:
 - **TypeScript** is a superset of JavaScript that adds static typing.
 - It allows you to define types for variables, function parameters, and return values.
 - This helps catch errors at compile time rather than runtime.
+- **TypeScript** is essentially **JavaScript** with additional annotations that define value types.
+- **JavaScript** is loosely typed, and ****TypeScript**** is strongly typed.
 - **TypeScript** files have a `.ts` extension.
 - To compile **TypeScript** to JavaScript, use the command: `tsc filename.ts`.
 - To run the compiled JavaScript, use the command: `node filename.js`.
@@ -32,8 +34,6 @@ I am currently studying **TypeScript** from the following resource:
 - **TypeScript** is used in many popular animation libraries, including GSAP, Anime.js, and Framer Motion.
 - **TypeScript** is used in many popular testing libraries, including Enzyme, React Testing Library, and Cypress.
 - **TypeScript** is used in many popular CSS-in-JS libraries, including Styled Components, Emotion, and JSS.
-- **TypeScript** is essentially **JavaScript** with additional annotations that define value types.
-- **JavaScript** is loosely typed, and ****TypeScript**** is strongly typed.
 
 ### Benefits of **TypeScript**:
 1. **Better Error Feedback**  
@@ -63,3 +63,17 @@ To run a **TypeScript** file, you need to compile it into a JavaScript file firs
 ### `null` vs `undefined`
 - **`null`**: Represents the intentional absence of a value.  
 - Once a variable is explicitly assigned a `null` or `undefined` type, its type cannot be changed unless explicitly cast or reassigned with a compatible type. This ensures stricter type safety in **TypeScript**.
+
+### `any` Type
+
+The `any` type allows a variable to hold any type of value, and its type can change dynamically. While this provides flexibility, it diminishes the benefits of using **TypeScript**, as it reduces type safety and error feedback.
+
+#### When to Use `any`
+- **Migration from JavaScript to TypeScript**: Using `any` can help avoid initial errors when transitioning a codebase from JavaScript to TypeScript.
+- **Temporary Workarounds**: It can be used as a temporary solution during development when the exact type is unknown.
+
+#### Why to Avoid Overusing `any`
+- **Reduced Error Detection**: Frequent use of `any` undermines **TypeScript's** ability to catch errors during development.
+- **Loss of Type Safety**: It negates the advantages of static typing, making the code less predictable and harder to maintain.
+
+> **Tip**: Use `any` sparingly and prefer stricter types whenever possible to fully leverage the benefits of **TypeScript**.

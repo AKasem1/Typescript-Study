@@ -77,3 +77,7 @@ The `any` type allows a variable to hold any type of value, and its type can cha
 - **Loss of Type Safety**: It negates the advantages of static typing, making the code less predictable and harder to maintain.
 
 > **Tip**: Use `any` sparingly and prefer stricter types whenever possible to fully leverage the benefits of **TypeScript**.
+
+
+Interfaces
+    interfaces are a way to define a certain structure that all data structures can adhere to, whether they are classes, objects or even other interfaces.

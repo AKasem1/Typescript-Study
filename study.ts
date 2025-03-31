@@ -161,3 +161,42 @@ Point3D = [90, 100]
 Point3D[0] = 110
 Point3D[1] = 120
 
+
+
+//Interfaces
+interface Author {
+    name: string,
+    avatar: string
+}
+
+const authorOne: Author = {
+    name: "John Doe",
+    avatar: "https://example.com/avatar.jpg"
+}
+
+interface Post {
+    title: string,
+    body: string,
+    tags: string[],
+    createdAt: Date,
+    author: Author
+}
+
+const newPost: Post = {
+    title: "Understanding TypeScript",
+    body: "This post explains the basics of TypeScript.",
+    tags: ["typescript", "programming", "basics"],
+    createdAt: new Date(),
+    author: authorOne
+}
+
+//Interfaces as function arguments types
+function createPost(post: Post): void {
+    console.log(`Post created: ${post.title} by ${post.author.name}`)
+}
+
+createPost(newPost)
+
+//Interfaces with arrays
+let posts: Post[] = []
+posts.push(newPost)

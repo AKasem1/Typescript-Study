@@ -249,3 +249,41 @@ type Id = string | number
 let userId: Id
 userId = 123
 userId = "abc123"
+
+
+//Type Guards
+type testId = string | number
+
+function swapIdType(id: testId) {
+    if (typeof id === "string") {
+        return parseInt(id)
+    } else {
+        return id.toString()
+    }
+}
+const swappedId = swapIdType("123") // "123" becomes 123
+const swappedId2 = swapIdType(123) // 123 becomes "123"
+
+
+//Tagged Interfaces
+interface Customer {
+    type: "customer"; //This is a tagged interface, by using the type property we can identify the type of the object
+    username: string;
+    email: string;
+    id: Id;
+  }
+  
+  interface Person {
+    type: "person";  //This is a tagged interface, by using the type property we can identify the type of the object
+    firstname: string;
+    age: number;
+    id: Id;
+  }
+  
+  function logDetails(value: Customer | Person): void {
+    if (value.type === "customer") {
+      console.log(`Customer: ${value.username}, Email: ${value.email}`);
+    } else {
+      console.log(`Person: ${value.firstname}, Age: ${value.age}`);
+    }
+  }

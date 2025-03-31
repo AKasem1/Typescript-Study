@@ -111,3 +111,9 @@ value = "Hello"; // Valid
 value = 42;      // Valid
 // value = true; // Error: Type 'boolean' is not assignable to type 'string | number'.
 ```
+
+
+
+### Type Guards
+
+- Type Guards is just a fancy way of saying we are going to check for the type of something before trying to execute some code
